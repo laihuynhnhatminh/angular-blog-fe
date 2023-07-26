@@ -30,7 +30,8 @@
             "prefix": "app",
             "style": "kebab-case"
           }
-        ]
+        ],
+        "prettier/prettier": ["error", {"singleQuote": true, "trailingComma": "all", "tabWidth": 2, "bracketSpacing": true, "endOfLine": "auto"}]
       }
     },
     {
@@ -40,7 +41,9 @@
       "extends": [
         "plugin:@angular-eslint/template/recommended"
       ],
-      "rules": {}
+      "rules": {
+        "prettier/prettier": ["error", {"singleQuote": true, "trailingComma": "all", "tabWidth": 2, "bracketSpacing": true, "endOfLine": "auto"}]
+      }
     }
   ],
   "env": {
@@ -54,6 +57,16 @@
       "sourceType": "module"
   },
   "plugins": [
-      "@typescript-eslint"
+      "@typescript-eslint",
+      "prettier",
+      "simple-import-sort",
+      "import"
+  ],
+  "extends": [
+    "plugin:import/typescript",
+    "plugin:prettier/recommended",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/eslint-recommended"
   ]
 }
