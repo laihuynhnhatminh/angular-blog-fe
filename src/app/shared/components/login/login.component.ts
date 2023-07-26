@@ -1,13 +1,11 @@
-import { CommonModule } from "@angular/common";
-import { Component } from "@angular/core";
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-login',
-    standalone: true,
-    templateUrl: './login.component.html',
-    styleUrls: ['./login.component.scss'],
-    imports: [CommonModule]
+  standalone: true,
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss'],
+  imports: [CommonModule],
 })
-export class AppLoginComponent {
-
-}
+export class AppLoginComponent {}
