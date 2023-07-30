@@ -1,1 +1,19 @@
-<p>login works!</p>
+<app-login title="LOGIN PAGE">
+  <form nz-form>
+    <nz-form-item>
+      <nz-form-control>
+        <nz-input-group nzPrefixIcon="user">
+          <input type="email" nz-input placeholder="Email" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control>
+        <nz-input-group nzPrefixIcon="lock">
+          <input type="password" nz-input placeholder="Password" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+  <button nz-button nzType="primary">Login Button</button>
+</app-login>
