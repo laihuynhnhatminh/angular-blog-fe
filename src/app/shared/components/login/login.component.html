@@ -1,25 +1,15 @@
-<nz-layout class="login-container">
-  <nz-content>
-    <div class="login-content">
-      <div nz-row class="login-form" nzJustify="center" nzAlign="middle">
-        <div nz-col nzXs="20" nzSm="16" nzMd="12" nzLg="6">
-          <h1>{{ title }}</h1>
-          <ng-content></ng-content>
-        </div>
-        <div nz-col nzXs="20" nzSm="16" nzMd="12" nzLg="6">
-          <img
-            class="app-logo"
-            nz-image
-            nzSrc="assets/images/logo.svg"
-            nzDisablePreview="true"
-          />
-        </div>
-      </div>
+<div class="card">
+  <div
+    class="login-container flex flex-column card-container justify-content-center"
+  >
+    <div class="flex flex-column">
+      <h1 class="flex align-items-center justify-content-center">
+        {{ title }}
+      </h1>
+      <ng-content></ng-content>
     </div>
-  </nz-content>
-  <nz-footer>
-    <div class="login-footer">
-      <p class="login-footer-text">All right reserved to me.</p>
+    <div class="flex align-items-center justify-content-center">
+      <img class="app-logo" src="assets/images/logo.svg" />
     </div>
-  </nz-footer>
-</nz-layout>
+  </div>
+</div>

@@ -1,14 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500');
-
 .login-container {
-    font-family: "Roboto Slab", sans-serif;
+    padding: 0 5%;
 
-    .login-content {
-        padding: 0 5%;
-        
-        .app-logo {
-            width: 100%;
-        }
+    .app-logo {
+        width: auto;
     }
 }
 
