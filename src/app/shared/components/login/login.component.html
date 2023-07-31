@@ -1,26 +1,25 @@
-<nz-layout class="login-layout">
-  <nz-header>
-    <div class="login-header">
-      <img
-        nz-image
-        width="200px"
-        height="120px"
-        nzSrc="assets/images/logo.svg"
-      />
-      <p class="login-header-text"></p>
+<nz-layout class="login-container">
+  <nz-content>
+    <div class="login-content">
+      <div nz-row class="login-form" nzJustify="center" nzAlign="middle">
+        <div nz-col nzXs="20" nzSm="16" nzMd="12" nzLg="6">
+          <h1>{{ title }}</h1>
+          <ng-content></ng-content>
+        </div>
+        <div nz-col nzXs="20" nzSm="16" nzMd="12" nzLg="6">
+          <img
+            class="app-logo"
+            nz-image
+            nzSrc="assets/images/logo.svg"
+            nzDisablePreview="true"
+          />
+        </div>
+      </div>
     </div>
-  </nz-header>
-  <nz-content class="login-content">
-    <nz-row class="login-form" nzJustify="center" nzAlign="middle">
-      <nz-col nzXs="20" nzSm="16" nzMd="12" nzLg="6">
-        <h1>{{ title }}</h1>
-        <ng-content></ng-content>
-      </nz-col>
-    </nz-row>
   </nz-content>
   <nz-footer>
     <div class="login-footer">
-      <p class="login-footer-text"></p>
+      <p class="login-footer-text">All right reserved to me.</p>
     </div>
   </nz-footer>
 </nz-layout>

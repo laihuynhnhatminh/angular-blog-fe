@@ -1,7 +1,17 @@
-.login-layout {
-    height: 100vh;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500');
+
+.login-container {
+    font-family: "Roboto Slab", sans-serif;
+
+    .login-content {
+        padding: 0 5%;
+        
+        .app-logo {
+            width: 100%;
+        }
+    }
 }
 
-.login-content {
-    padding: 10% 10% 0;
+:is(.login-container, .login-content, .login-form) {
+    height: 100%;
 }
