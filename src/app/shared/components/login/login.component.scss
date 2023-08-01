@@ -1,11 +1,5 @@
 .login-container {
-    padding: 0 5%;
-
-    .app-logo {
-        width: auto;
+    .login-form {
+        padding: 20% 0;
     }
-}
-
-:is(.login-container, .login-content, .login-form) {
-    height: 100%;
 }

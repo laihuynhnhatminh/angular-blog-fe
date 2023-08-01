@@ -1,3 +1,27 @@
 <app-login title="LOGIN PAGE">
-  <p-button label="LOGIN"></p-button>
+  <div class="card">
+    <form class="flex flex-column md:w-24rem sm:w-18rem">
+      <span class="field p-float-label">
+        <input
+          pInputText
+          type="email"
+          id="email"
+          placeholder="Enter email"
+          class="border-round outline-none focus:border-primary w-full"
+        />
+        <label htmlFor="email">Email</label>
+      </span>
+      <span class="field p-float-label">
+        <input
+          pInputText
+          type="password"
+          id="password"
+          placeholder="Enter password"
+          class="border-round outline-none focus:border-primary w-full"
+        />
+        <label htmlFor="password">Password</label>
+      </span>
+      <p-button class="flex justify-content-center" label="LOGIN"></p-button>
+    </form>
+  </div>
 </app-login>

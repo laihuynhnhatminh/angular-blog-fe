@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 
 // PrimeNG
 import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
 
 // Standalone
 import { AppLoginComponent } from 'src/app/shared/components/login/login.component';
@@ -17,7 +18,7 @@ import { RegisterPageComponent } from './pages/register-page/register-page.compo
 
 const ANGULAR_MODULES = [ReactiveFormsModule, FormsModule];
 const STANDALONES = [AppLoginComponent];
-const PRIMENG_MODULES = [ButtonModule];
+const PRIMENG_MODULES = [ButtonModule, InputTextModule];
 @NgModule({
   declarations: [LoginPageComponent, RegisterPageComponent],
   imports: [

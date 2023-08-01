@@ -1,15 +1,19 @@
-<div class="card">
-  <div
-    class="login-container flex flex-column card-container justify-content-center"
-  >
-    <div class="flex flex-column">
-      <h1 class="flex align-items-center justify-content-center">
+<div class="login-container grid h-screen bg-pink-50">
+  <div class="flex flex-column align-self-center col-6 align-items-center">
+    <div
+      class="login-form flex flex-column w-8 shadow-5 bg-white border-round-2xl"
+    >
+      <h1 class="flex justify-content-center">
         {{ title }}
       </h1>
-      <ng-content></ng-content>
+      <div class="flex justify-content-center w-full">
+        <ng-content></ng-content>
+      </div>
     </div>
-    <div class="flex align-items-center justify-content-center">
-      <img class="app-logo" src="assets/images/logo.svg" />
+  </div>
+  <div class="col-6 flex flex-column align-self-center">
+    <div class="flex justify-content-center">
+      <img class="w-auto" src="assets/images/logo.svg" />
     </div>
   </div>
 </div>
