@@ -17,9 +17,12 @@ export class HttpService {
   }
 
   public get<T>(url: string, httpParams?: IHttpParams): Observable<T> {
-    const params = this.getParams(httpParams);
+    const options = {
+      params: this.getParams(httpParams),
+      headers: this.httpHeaders,
+    };
     return this.httpClient
-      .get<T>(url, { params, headers: this.httpHeaders })
+      .get<T>(url, options)
       .pipe(catchError((error: HttpErrorResponse) => this.handleError(error)));
   }
 
@@ -28,9 +31,12 @@ export class HttpService {
     body: T,
     httpParams?: IHttpParams,
   ): Observable<T> {
-    const params = this.getParams(httpParams);
+    const options = {
+      params: this.getParams(httpParams),
+      headers: this.httpHeaders,
+    };
     return this.httpClient
-      .post<T>(url, body, { params, headers: this.httpHeaders })
+      .post<T>(url, body, options)
       .pipe(catchError((error: HttpErrorResponse) => this.handleError(error)));
   }
 
@@ -39,23 +45,32 @@ export class HttpService {
     body: T,
     httpParams?: IHttpParams,
   ): Observable<T> {
-    const params = this.getParams(httpParams);
+    const options = {
+      params: this.getParams(httpParams),
+      headers: this.httpHeaders,
+    };
     return this.httpClient
-      .patch<T>(url, body, { params, headers: this.httpHeaders })
+      .patch<T>(url, body, options)
       .pipe(catchError((error: HttpErrorResponse) => this.handleError(error)));
   }
 
   public put<T>(url: string, body: T, httpParams?: IHttpParams): Observable<T> {
-    const params = this.getParams(httpParams);
+    const options = {
+      params: this.getParams(httpParams),
+      headers: this.httpHeaders,
+    };
     return this.httpClient
-      .put<T>(url, body, { params, headers: this.httpHeaders })
+      .put<T>(url, body, options)
       .pipe(catchError((error: HttpErrorResponse) => this.handleError(error)));
   }
 
   public delete<T>(url: string, httpParams?: IHttpParams): Observable<T> {
-    const params = this.getParams(httpParams);
+    const options = {
+      params: this.getParams(httpParams),
+      headers: this.httpHeaders,
+    };
     return this.httpClient
-      .delete<T>(url, { params, headers: this.httpHeaders })
+      .delete<T>(url, options)
       .pipe(catchError((error: HttpErrorResponse) => this.handleError(error)));
   }
 
@@ -72,6 +87,7 @@ export class HttpService {
     return httpParams;
   }
 
+  // TODO: after create BE - unified error handling through angular interceptor and centralized error handling
   private handleError(error: HttpErrorResponse): Observable<never> {
     return throwError(() => new Error(error.message));
   }

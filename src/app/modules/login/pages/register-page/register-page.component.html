@@ -35,7 +35,11 @@
         <i class="pi pi-lock"></i>
         <label htmlFor="re-password">Repeat Password</label>
       </span>
-      <p-button class="flex justify-content-center" label="REGISTER"></p-button>
+      <p-button
+        class="flex justify-content-center"
+        label="REGISTER"
+        (onClick)="onRegister()"
+      ></p-button>
     </form>
   </div>
 </app-login>

@@ -1,26 +1,94 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
+import {
+  ConfirmationService,
+  MessageService,
+  ConfirmEventType,
+} from 'primeng/api';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ToastModule } from 'primeng/toast';
+
+const PRIMENG_MODULES = [ConfirmDialogModule, ToastModule];
+const PRIMENG_SERVICES = [MessageService, ConfirmationService];
 
 @Component({
   selector: 'app-simple-modal',
   standalone: true,
   templateUrl: './simple-modal.component.html',
   styleUrls: ['./simple-modal.component.scss'],
-  imports: [CommonModule],
+  imports: [CommonModule, ...PRIMENG_MODULES],
+  providers: [...PRIMENG_SERVICES],
 })
 export class SimpleModalComponent {
   //TODO: REDO
-  @Input() public visible = false;
-  @Input() public title = '';
-  @Input() public modalContent = '';
-  @Output() public handleOk = new EventEmitter<void>();
-  @Output() public handleCancel = new EventEmitter<void>();
+  constructor(
+    private confirmationService: ConfirmationService,
+    private messageService: MessageService,
+  ) {}
 
-  public onHandleOk(): void {
-    this.handleOk.emit();
+  confirm1() {
+    this.confirmationService.confirm({
+      message: 'Are you sure that you want to proceed?',
+      header: 'Confirmation',
+      icon: 'pi pi-exclamation-triangle',
+      accept: () => {
+        this.messageService.add({
+          severity: 'info',
+          summary: 'Confirmed',
+          detail: 'You have accepted',
+        });
+      },
+      reject: (type: ConfirmEventType) => {
+        switch (type) {
+          case ConfirmEventType.REJECT:
+            this.messageService.add({
+              severity: 'error',
+              summary: 'Rejected',
+              detail: 'You have rejected',
+            });
+            break;
+          case ConfirmEventType.CANCEL:
+            this.messageService.add({
+              severity: 'warn',
+              summary: 'Cancelled',
+              detail: 'You have cancelled',
+            });
+            break;
+        }
+      },
+    });
   }
 
-  public onHandleCancel(): void {
-    this.handleCancel.emit();
+  confirm2() {
+    this.confirmationService.confirm({
+      message: 'Do you want to delete this record?',
+      header: 'Delete Confirmation',
+      icon: 'pi pi-info-circle',
+      accept: () => {
+        this.messageService.add({
+          severity: 'info',
+          summary: 'Confirmed',
+          detail: 'Record deleted',
+        });
+      },
+      reject: (type: ConfirmEventType) => {
+        switch (type) {
+          case ConfirmEventType.REJECT:
+            this.messageService.add({
+              severity: 'error',
+              summary: 'Rejected',
+              detail: 'You have rejected',
+            });
+            break;
+          case ConfirmEventType.CANCEL:
+            this.messageService.add({
+              severity: 'warn',
+              summary: 'Cancelled',
+              detail: 'You have cancelled',
+            });
+            break;
+        }
+      },
+    });
   }
 }

@@ -26,7 +26,11 @@
         <label htmlFor="password">Password</label>
         <i class="pi pi-lock"></i>
       </span>
-      <p-button class="flex justify-content-center" label="LOGIN"></p-button>
+      <p-button
+        class="flex justify-content-center"
+        label="LOGIN"
+        (onClick)="onLogin()"
+      ></p-button>
     </form>
   </div>
 </app-login>
