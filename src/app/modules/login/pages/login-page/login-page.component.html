@@ -1,7 +1,10 @@
-<app-login title="LOGIN PAGE">
+<app-login title="LOGIN">
   <div class="card">
-    <form class="flex flex-column md:w-24rem sm:w-18rem">
-      <span class="field p-float-label">
+    <form class="flex flex-column xl:w-26rem lg:w-18rem md:w-12rem">
+      <p>
+        Don't have an account yet? <a routerLink="../register">Register Here</a>
+      </p>
+      <span class="field p-float-label p-input-icon-left py-2">
         <input
           pInputText
           type="email"
@@ -10,8 +13,9 @@
           class="border-round outline-none focus:border-primary w-full"
         />
         <label htmlFor="email">Email</label>
+        <i class="pi pi-user"></i>
       </span>
-      <span class="field p-float-label">
+      <span class="field p-float-label p-input-icon-left py-2">
         <input
           pInputText
           type="password"
@@ -20,6 +24,7 @@
           class="border-round outline-none focus:border-primary w-full"
         />
         <label htmlFor="password">Password</label>
+        <i class="pi pi-lock"></i>
       </span>
       <p-button class="flex justify-content-center" label="LOGIN"></p-button>
     </form>

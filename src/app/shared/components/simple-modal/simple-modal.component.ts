@@ -1,15 +1,15 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { NzModalModule } from 'ng-zorro-antd/modal';
 
 @Component({
   selector: 'app-simple-modal',
   standalone: true,
   templateUrl: './simple-modal.component.html',
   styleUrls: ['./simple-modal.component.scss'],
-  imports: [CommonModule, NzModalModule],
+  imports: [CommonModule],
 })
 export class SimpleModalComponent {
+  //TODO: REDO
   @Input() public visible = false;
   @Input() public title = '';
   @Input() public modalContent = '';

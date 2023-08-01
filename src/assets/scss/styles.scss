@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500');
+// PrimeNG
 @import "primeng/resources/themes/lara-light-indigo/theme.css";
 @import "primeng/resources/primeng.css";
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500');
+@import "primeicons/primeicons.css";
+
+// Custom PrimeNG
+@import "./prime/index.scss";
 /* You can add global styles to this file, and also import other style files */
 
 body {
