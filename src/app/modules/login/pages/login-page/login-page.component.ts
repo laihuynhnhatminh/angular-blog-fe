@@ -1,10 +1,5 @@
 import { Component } from '@angular/core';
-import {
-  AbstractControl,
-  FormBuilder,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthHttpService } from 'src/app/shared/http-services/auth-http.service';
 
@@ -21,14 +16,6 @@ export class LoginPageComponent {
     private readonly authHttpService: AuthHttpService,
   ) {
     this.initLoginForm();
-  }
-
-  private get email(): AbstractControl {
-    return this.loginForm.controls['email'];
-  }
-
-  private get password(): AbstractControl {
-    return this.loginForm.controls['password'];
   }
 
   public login(): void {
