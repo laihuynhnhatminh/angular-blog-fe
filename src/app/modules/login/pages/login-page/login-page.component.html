@@ -1,12 +1,17 @@
 <app-login title="LOGIN">
   <div class="card">
-    <form class="flex flex-column xl:w-26rem lg:w-18rem md:w-12rem">
+    <form
+      [formGroup]="loginForm"
+      (ngSubmit)="login()"
+      class="flex flex-column xl:w-26rem lg:w-18rem md:w-12rem"
+    >
       <p>
         Don't have an account yet? <a routerLink="../register">Register Here</a>
       </p>
       <span class="field p-float-label p-input-icon-left py-2">
         <input
           pInputText
+          formControlName="email"
           type="email"
           id="email"
           placeholder="Enter email"
@@ -18,6 +23,7 @@
       <span class="field p-float-label p-input-icon-left py-2">
         <input
           pInputText
+          formControlName="password"
           type="password"
           id="password"
           placeholder="Enter password"
@@ -29,7 +35,7 @@
       <p-button
         class="flex justify-content-center"
         label="LOGIN"
-        (onClick)="onLogin()"
+        type="submit"
       ></p-button>
     </form>
   </div>

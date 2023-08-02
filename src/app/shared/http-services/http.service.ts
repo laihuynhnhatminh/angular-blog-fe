@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   HttpClient,
   HttpErrorResponse,
@@ -28,7 +29,7 @@ export class HttpService {
 
   public post<T>(
     url: string,
-    body: T,
+    body: any,
     httpParams?: IHttpParams,
   ): Observable<T> {
     const options = {
@@ -42,7 +43,7 @@ export class HttpService {
 
   public patch<T>(
     url: string,
-    body: T,
+    body: any,
     httpParams?: IHttpParams,
   ): Observable<T> {
     const options = {
@@ -54,7 +55,11 @@ export class HttpService {
       .pipe(catchError((error: HttpErrorResponse) => this.handleError(error)));
   }
 
-  public put<T>(url: string, body: T, httpParams?: IHttpParams): Observable<T> {
+  public put<T>(
+    url: string,
+    body: any,
+    httpParams?: IHttpParams,
+  ): Observable<T> {
     const options = {
       params: this.getParams(httpParams),
       headers: this.httpHeaders,
